@@ -33,7 +33,8 @@ window.addEventListener("scroll", reveal);
 
 const form = document.getElementById('form');
 const fname = document.getElementById('fname');
-const lname = document.getElementById('lname')
+const lname = document.getElementById('lname');
+const email = document.getElementById('email');
 
 form.addEventListener('submit', e => {
     e.preventDefault();

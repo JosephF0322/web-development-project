@@ -1,0 +1,309 @@
+/* sets the default margin and padding to 0. It also sets the font for the website. */
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+  background-color: #000;
+  color: #fff;
+}
+
+/*All of this for the sidebar and its animations (highlighting, expanding/contracting, etc. It is used on each page. */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* if the screen is smaller change the padding and font of the sidebar to make it fit better */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+
+/* I made this pretty early on and all it does is set the title next to and in-line with the open sidebar button */
+.grid-cont{
+    display: flex;
+    align-items: center;
+    grid-template-columns: 5% 95%;
+    grid-gap: 20px;
+}
+
+/* I had major issues creating this I kept trying to use nth child but there is some unknown child and all the children are offset by 1?
+I don't know how that works, but got it to work. */
+section{
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section:nth-child(2){
+  color:rgb(0, 0, 0);
+  background-image: url(https://images.template.net/102660/free-simple-forest-background-8s5mc.jpg);
+  background-size: auto 102%;
+}
+
+section:nth-child(3){
+  color:#3c4931;
+  background: linear-gradient(#4d5d3f,15%,black);
+}
+
+section:nth-child(4){
+  color:black;
+  background: linear-gradient(black,15%, #4d5d3f);
+}
+
+section:nth-child(5){
+  color:#3c4931;
+  background: linear-gradient(#4d5d3f,15%, black);
+}
+
+section:nth-child(6){
+  color:#3c4931;
+}
+
+/* These sections are for the cards that the about page uses, I followed https://www.youtube.com/watch?v=VplDlwLTR50 youtube tutorial, but had the struggle mentioned in the comment above. */
+section .card-container{
+  margin: 100px;
+}
+
+section h1{
+  font-size: 60px;
+}
+
+section h2{
+  font-size:40px;
+  text-align: center;
+}
+
+section .cards{
+  display: flex;
+}
+
+section .cards .cardtext{
+  font-size: 20px;
+  background: #799768;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+section .cards .cardtext h3{
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card-img{
+  border-radius: 15px;
+  filter:blur(15px);
+  transition: ease-in 1s;
+  overflow: hidden;
+}
+
+.card-img:hover{
+  filter:blur(0);
+  transition: ease-out 1s;
+}
+@media (max-width: 900px){
+  section h1{
+    font-size: 40px;
+  }
+
+  section .cards{
+    flex-direction: column;
+  }
+
+  section .cards .cardtext{
+    font-size: 14px;
+    background: #799768;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+  }
+}
+
+/* This does the slight reveal that is used in the About page. */
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.reveal.active{
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.home-text{
+  text-align: center;
+  font-size: 30px;
+
+}
+
+.home-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 15px;
+  overflow: hidden;
+  filter:blur(15px);
+  transition: ease-in 1.5s;
+}
+
+.home-image:hover{
+  transition: ease-out 1.5s;
+  filter:blur(0);
+}
+
+
+
+#form {
+    padding: 20px;
+    border-radius: 4px;
+    font-size: 20px;
+  }
+
+  #form h1 {
+    color: #09c372;
+    text-align: center;
+  }
+
+  #form button {
+    padding: 10px;
+    margin-top: 10px;
+    width: 10%;
+    color: white;
+    background-color: #09c372;
+    border: none;
+    border-radius: 4px;
+  }
+
+  /* controls for the form submission color changing effects*/
+  .input-control {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-control input {
+    border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-size: 20px;
+  padding: 10px;
+  width: 25%;
+  }
+
+  .input-control input:focus {
+    outline: 0;
+  }
+
+  .input-control.success input {
+    border-color: #09c372;
+  }
+
+  .input-control.error input {
+    border-color: #ff3860;
+  }
+
+  .input-control .error {
+    color: #ff3860;
+    font-size: 15px;
+    height: 13px;
+}
+
+@media (max-width: 900px){
+  .input-control {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-control input {
+    border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-size: 15px;
+  padding: 5px;
+  width: 100%;
+  }
+
+  #form button {
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    color: white;
+    background-color: #09c372;
+    border: none;
+    border-radius: 4px;
+  }
+}
+/* This merely sets up the footer at the bottom of each page, it also highlights the links. */
+
+.footer-grid{
+    display:grid;
+    font-size: 15pt;
+    grid-template-columns: 100px;
+    background-color: #111;
+    color:white;
+    padding: 25px;
+    }
+
+    .footer-grid a:visited{
+        color: #43c579;
+    }
+
+    .footer-grid a:hover {
+    color: lightslategray;
+}

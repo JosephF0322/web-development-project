@@ -5,44 +5,16 @@ const fs = require("fs");
 const app = express();
 const port = 3000;
 
-
-/*
-I couldn't get the other pages to even work so we are just working with the bones.
-
-function createServer(req, res) {
-    var path = url.parse(req.url).pathname;
-    var fsCallback = function(error, data) {
-        if(error) throw error;
-
-        res.writeHead(200);
-        res.write(data);
-        res.end();
-    }
-
-    switch(path) {
-        case '/subpage':
-            doc = fs.readFile(__dirname + '/About.html', fsCallback);
-        break;
-		case '/Contact':
-			doc = fs.readFile(__dirname + '/Contact.html', fsCallback)
-		break;
-        default:
-            doc = fs.readFile(__dirname + '/index.html', fsCallback);
-        break;
-    }
-}
-*/
-
 app.use(express.urlencoded({ extended: true }));// for parsing application/x-www-form-urlencoded
 app.use(express.static("public"));
 
 app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/index.html'); // send HTML file on GET request
 });
-app.get('/', (req, res) => {
+app.get('/contact', (req, res) => {
 	res.sendFile(__dirname + '/Contact.html'); // send HTML file on GET request
 });
-app.get('/', (req, res) => {
+app.get('/about', (req, res) => {
 	res.sendFile(__dirname + '/About.html'); // send HTML file on GET request
 });
 

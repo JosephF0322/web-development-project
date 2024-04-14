@@ -37,7 +37,13 @@ app.use(express.urlencoded({ extended: true }));// for parsing application/x-www
 app.use(express.static("public"));
 
 app.get('/', (req, res) => {
+	res.sendFile(__dirname + '/index.html'); // send HTML file on GET request
+});
+app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/Contact.html'); // send HTML file on GET request
+});
+app.get('/', (req, res) => {
+	res.sendFile(__dirname + '/About.html'); // send HTML file on GET request
 });
 
 app.post('/submit-form', (req, res) => {

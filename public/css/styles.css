@@ -145,12 +145,14 @@ section .cards .cardtext h3{
 }
 
 .card-img{
-  size: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 15px;
-  filter:blur(15px);
-  transition: ease-in 1s;
+	display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 15px;
+    overflow: hidden;
+    filter:blur(15px);
+    transition: ease-in 1s;
 }
 
 .card-img:hover{
@@ -179,13 +181,14 @@ section .cards .cardtext h3{
     border-radius: 15px;
   }
   .card-img{
-	width: 50%;
-	height: auto;
-	margin-left: auto;
-	margin-right: auto;
-	border-radius: 15px;
-	filter:blur(15px);
-	transition: ease-in 1s;
+	display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    border-radius: 15px;
+    overflow: hidden;
+    filter:blur(0px);
+    transition: ease-in 1s;
 }
 }
 

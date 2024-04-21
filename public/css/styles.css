@@ -145,6 +145,7 @@ section .cards .cardtext h3{
 }
 
 .card-img{
+  size: 50%;
   margin-left: auto;
   margin-right: auto;
   border-radius: 15px;

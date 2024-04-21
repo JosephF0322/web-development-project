@@ -6,6 +6,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.urlencoded({ extended: true }));// for parsing application/x-www-form-urlencoded
+//allows it to access all public files
 app.use(express.static("public"));
 
 app.get('/', (req, res) => {
